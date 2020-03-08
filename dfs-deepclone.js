@@ -12,7 +12,7 @@ function DFSDeepClone(obj, cache = new WeakMap()) {
 
         cache.set(obj, obj);
         Object.getOwnPropertyNames(obj).concat(Object.getOwnPropertySymbols(obj)).forEach(val => {
-            dst[val] = DFSDeepClone(val, cache);
+            dst[val] = DFSDeepClone(obj[val], cache);
         });
     } else {
         dst = obj;
