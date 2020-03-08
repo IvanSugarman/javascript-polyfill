@@ -1,4 +1,4 @@
-function heapsort(arr) {
+function heapSort(arr) {
     if (!arr || !Array.isArray(arr)) {
         throw new TypeError(arr + 'is not a Array');
     }
