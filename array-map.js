@@ -6,19 +6,18 @@ Array.prototype.map = function(fn, context) {
     var O = Object(this),
         len = O.length >>> 0,
         k = 0,
-        res = new Array(len),
-        to = 0;
+        res = new Array(len);
 
     fn = !fn || typeof fn !== 'function' ? function() {} : fn;
 
     while (k < len) {
         if (O.hasOwnProperty(k)) {
-            res[to++] = fn.call(context, O[k], k, O);  
+            res[k] = fn.call(context, O[k], k, O);  
         }
         k++;
     }
 
-    res.length = to;
+    res.length = k;
 
     return res;
 }
