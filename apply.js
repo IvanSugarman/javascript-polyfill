@@ -1,4 +1,4 @@
-Function.prototype.apply = function(context, args) {
+Function.prototype.apply = function(context, arr) {
     var fn = this,
         i = 0,
         args = [],
@@ -8,17 +8,17 @@ Function.prototype.apply = function(context, args) {
         throw new TypeError(fn + 'is not a function');
     }
 
-    context = context || window;
+    context = Object(context) || window;
     context.fn = fn;
 
     if (!args || !Array.isArray(args)) {
         res = context.fn();
     } else {
-        for (; i < args.length; i++) {
-            args.push(args[i]);
+        for (; i < arr.length; i++) {
+            args.push('arr[' + i + ']');
         }
 
-        res = eval('context.fn(' + args + ')');
+        res = eval('context.fn(' + args.toString() + ')');
     }
 
     delete context.fn;

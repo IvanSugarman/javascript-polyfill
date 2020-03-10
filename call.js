@@ -15,7 +15,7 @@ Function.prototype.call = function(context) {
         args.push('argument[' + i + ']');
     }
 
-    res = eval('context.fn(' + args.join(',') + ')');
+    res = eval('context.fn(' + args.toString() + ')');
 
     delete context.fn;
 
