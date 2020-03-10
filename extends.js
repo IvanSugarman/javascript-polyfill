@@ -1,7 +1,7 @@
-// 组合继承
+// 寄生组合
 function extends(sup, sub) {
     // 父类原型的一个副本
-    var obj = Object.create(sup.prototype); 
+    var obj = Object.create(sup.prototype);
     // 增强 constructor
     obj.constructor = sub;
     // 指定对象
@@ -20,7 +20,6 @@ function _extends(sup, sub) {
     }
 
     sub.prototype = Object.create(sup && sup.prototype, {
-        // sub.prototype.constructor = sub;
         constructor: {
             value: sub,
             enumerale: false,
