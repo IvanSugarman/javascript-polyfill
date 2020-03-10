@@ -1,5 +1,6 @@
 function flatten(arr, deep) {
-    var res = [];
+    var res = [],
+        stack = arr;
 
     if (!arr || !Array.isArray(arr)) {
         throw new TypeError(arr + 'is not a Array');
@@ -24,4 +25,4 @@ function flatten(arr, deep) {
     }
 
     return res;
-} 
+}
