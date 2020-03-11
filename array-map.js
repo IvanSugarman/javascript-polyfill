@@ -17,7 +17,5 @@ Array.prototype.map = function(fn, context) {
         k++;
     }
 
-    res.length = k;
-
     return res;
 }
