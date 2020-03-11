@@ -7,7 +7,7 @@ function debounce(callback, wait) {
         clearTimeout(wait);
 
         timer = setTimeout(function() {
-            callback.apply(context, Array.prototypeslice.call(arguments));
+            callback.apply(context, Array.prototype.slice.call(arguments));
         }, wait);
     }
 }
