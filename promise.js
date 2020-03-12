@@ -142,6 +142,14 @@ Promise.prototype.then = function(onResolved, onRejected) {
         try {
             var x = onResolved(value);
             resolvePromise(promise2, x, resolve, reject);
+            /*
+             * 如果返回一个 promise 对象，直接取结果作为 promise2 的结果
+                if (x instanceof Promise) {
+                    x.then(resolve, reject);
+                }
+               否则以它的返回值作为 promise2 的结果
+                resolve(x);
+             */
         } catch (e) {
             reject(e);
         }
