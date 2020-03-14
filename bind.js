@@ -1,5 +1,6 @@
 Function.prototype.bind = function(context) {
     var fn = this,
+        args,
         fNop,
         fBound;
 
