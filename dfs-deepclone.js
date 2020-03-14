@@ -1,7 +1,7 @@
 function DFSDeepClone(obj, cache = new WeakMap()) {
     var dst;
 
-    if (cache.has(obj)) {
+    if (cache.has(obj) || obj === null) {
         return obj;
     }
 
