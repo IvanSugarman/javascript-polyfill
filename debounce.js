@@ -4,7 +4,7 @@ function debounce(callback, wait) {
     return function() {
         var context = this;
 
-        clearTimeout(wait);
+        clearTimeout(timer);
 
         timer = setTimeout(function() {
             callback.apply(context, Array.prototype.slice.call(arguments));
