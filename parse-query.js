@@ -15,7 +15,7 @@ function parseQuery(url) {
 
 function parseQuery(url) {
     var dst = {},
-        protoReg = /(\w+):\/\/([^/:]+)(:\d+)/,
+        protoReg = /(\w+):\/\/([^/:]+)(:\d+)?/,
         paraReg = /[?&]([^=&#]+)=([^&#]*)/g,
         queries = url.match(paraReg),
         descs = url.match(protoReg);
