@@ -7,3 +7,22 @@ function curry(fn, ...args) {
         }
     }
 }
+
+function compose(funcs) {
+    if (!funcs || !Array.isArray(funcs) || funcs.some(val => typeof val !== 'function')) {
+        throw new TypeError();
+    }
+
+    var index = funcs.length - 1;
+
+    return function(...args) {
+        var result = funcs[index](...args);
+
+        while (index >= 0) {
+            index--;
+            result = funcs[index](result);
+        }
+
+        return result;
+    }
+}
