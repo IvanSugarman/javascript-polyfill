@@ -8,7 +8,7 @@ Array.prototype.map = function(fn, context) {
         k = 0,
         res = new Array(len);
 
-    fn = !fn || typeof fn !== 'function' ? function() {} : fn;
+    fn = typeof fn !== 'function' ? function() {} : fn;
 
     while (k < len) {
         if (O.hasOwnProperty(k)) {
