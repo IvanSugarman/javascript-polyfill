@@ -8,7 +8,7 @@ Function.prototype.apply = function(context, arr) {
         throw new TypeError(fn + 'is not a function');
     }
 
-    context = Object(context) || window;
+    context = context || window;
     context.fn = fn;
 
     if (!args || !Array.isArray(args)) {
