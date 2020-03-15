@@ -11,7 +11,7 @@ Function.prototype.apply = function(context, arr) {
     context = context || window;
     context.fn = fn;
 
-    if (!args || !Array.isArray(args)) {
+    if (!arr || !Array.isArray(arr)) {
         res = context.fn();
     } else {
         for (; i < arr.length; i++) {
