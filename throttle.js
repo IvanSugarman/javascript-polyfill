@@ -7,7 +7,7 @@ function throttle(callback, wait) {
             args = Array.prototype.slice.call(arguments);
             context = this;
 
-        if (last && last + wait < now) {
+        if (last && last + wait > now) {
             clearTimeout(timer);
             timer = setTimeout(function() {
                 callback.apply(context, args);
